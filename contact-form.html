@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Kids Who Code</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+            border: 2px solid #ffd700;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #ffd700;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .highlight {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="number"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .form-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border: 3px solid #ffd700;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #5a6fd8, #6b42a0);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            padding: 12px 25px;
+            border: 2px solid #25d366;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .whatsapp-btn:hover {
+            background: linear-gradient(135deg, #1da851, #0f7a6b);
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:active {
+            transform: translateY(0);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: #2c3e50;
+            padding: 10px 20px;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: #667eea;
+            transform: translateY(-1px);
+        }
+
+        .form-info {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ffd700;
+            backdrop-filter: blur(5px);
+        }
+
+        .form-info p {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <button class="back-btn" onclick="window.history.back()">← Back to Home</button>
+        
+        <div class="logo">
+            <img src="site-logo.png" alt="Kids Who Code Logo">
+        </div>
+        
+        <h1>Give Your Child <span class="highlight">Superhero</span> Coding Powers!</h1>
+        <p class="subtitle">Fill out the form below and we'll get back to you</p>
+        
+        <div class="form-info">
+            <p><strong>Demo Session:</strong> ₹150 only | <strong>Age Group:</strong> 12-18 years</p>
+        </div>
+        
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="531cda63-de5c-4dfe-b044-c0207fbc117f">
+            <input type="hidden" name="subject" value="New Kids Who Code Application">
+            <input type="hidden" name="from_name" value="Kids Who Code Website">
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+            
+            <div class="form-group">
+                <label for="parentName">Parent's Name *</label>
+                <input type="text" id="parentName" name="parentName" required placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number *</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Enter your phone number">
+            </div>
+            
+            <div class="form-group">
+                <label for="kidAge">Child's Age *</label>
+                <input type="number" id="kidAge" name="kidAge" min="12" max="18" required placeholder="Enter child's age (12-18)">
+            </div>
+            
+            <div class="form-group">
+                <label for="kidName">Child's Name</label>
+                <input type="text" id="kidName" name="kidName" placeholder="Enter child's name (optional)">
+            </div>
+            
+            <div class="form-buttons">
+                <button type="submit" class="submit-btn">
+                    Submit Application
+                </button>
+                
+                <button type="button" class="whatsapp-btn" onclick="sendToWhatsApp()">
+                    Contact via WhatsApp
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function sendToWhatsApp() {
+            const parentName = document.getElementById('parentName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const kidAge = document.getElementById('kidAge').value;
+            const kidName = document.getElementById('kidName').value;
+            
+            // Validate required fields
+            if (!parentName || !phoneNumber || !kidAge) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Validate age range
+            if (kidAge < 12 || kidAge > 18) {
+                alert('Child age must be between 12 and 18 years.');
+                return;
+            }
+            
+            // Create WhatsApp message
+            let message = `Hello! I'm interested in the Kids Who Code Python Bootcamp.%0A%0A`;
+            message += `Parent Name: ${parentName}%0A`;
+            message += `Phone: ${phoneNumber}%0A`;
+            message += `Child's Age: ${kidAge} years%0A`;
+            
+            if (kidName) {
+                message += `Child's Name: ${kidName}%0A`;
+            }
+            
+            message += `%0AI'd like to book a demo session for the Avenger-themed Python coding bootcamp!%0A%0A`;
+            message += `Please share more details about:
+- Demo session timing
+- Course structure
+- Pricing details
+- Superhero coding adventures%0A%0A`;
+            message += `Looking forward to giving my child superhero coding powers!`;
+            
+            // WhatsApp number for Kids Who Code
+            const whatsappNumber = '919876543210'; // Kids Who Code WhatsApp number
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+            
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const parentName = document.getElementById('parentName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const kidAge = document.getElementById('kidAge').value;
+            
+            // Validate required fields
+            if (!parentName || !phoneNumber || !kidAge) {
+                e.preventDefault();
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Validate age range
+            if (kidAge < 12 || kidAge > 18) {
+                e.preventDefault();
+                alert('Child age must be between 12 and 18 years.');
+                return;
+            }
+            
+            // Form will be submitted to Web3Forms
+            // Show success message (will be replaced by Web3Forms redirect)
+            setTimeout(() => {
+                alert('Thank you! Your application has been submitted successfully. We will contact you soon.');
+            }, 100);
+        });
+    </script>
+</body>
+</html> 
