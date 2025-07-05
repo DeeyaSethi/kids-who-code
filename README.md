@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Kids Who Code - Landing Page
 
 A modern, responsive landing page for "Kids Who Code" - a Python bootcamp platform for children aged 12-18.
@@ -182,3 +183,7 @@ This landing page template is created for Kids Who Code. Feel free to modify and
 ---
 
 **Good luck with your Kids Who Code bootcamp! 🚀** 
+=======
+# kids-who-code
+kids who code landing page
+>>>>>>> 34cc89c68ea78517a572a063519e0bbc46ec8a6e
