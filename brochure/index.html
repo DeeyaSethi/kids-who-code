@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brochure - Kids Who Code</title>
+    <link rel="icon" type="image/png" href="../site-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); color: #2c3e50; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 72px 20px 40px; }
+        .card { background: rgba(255,255,255,0.96); border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.12); overflow: hidden; }
+        .header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding: 16px 18px; border-bottom: 1px solid rgba(0,0,0,0.06); position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); z-index: 2; }
+        .brand { display:flex; align-items:center; gap:10px; min-width: 0; }
+        .brand img { height: 32px; width:auto; flex: 0 0 auto; }
+        .brand a { color:#2c3e50; text-decoration:none; font-weight:600; margin-right:8px; white-space: nowrap; }
+        .brand span { font-weight:700; font-size: 1rem; overflow: hidden; text-overflow: ellipsis; }
+        .actions { display:flex; gap:10px; flex-wrap: wrap; }
+        .btn { display:inline-flex; align-items:center; justify-content:center; padding: 10px 16px; border-radius: 12px; border: 2px solid #ffd700; background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; font-weight: 700; text-decoration: none; transition: transform .15s ease, box-shadow .25s ease; }
+        .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(102,126,234,.35); }
+        .content { background:#fff; padding: 16px; }
+        .pages { display:grid; grid-template-columns: 1fr; gap: 14px; }
+        .page a { display:block; }
+        .page img { width:100%; height:auto; border-radius:12px; box-shadow: 0 12px 30px rgba(0,0,0,.08); }
+        .note { font-size:.95rem; color:#4a5568; margin-top: 10px; }
+
+        /* Mobile-first refinements */
+        @media (max-width: 768px) {
+            .container { padding: 64px 14px 28px; }
+            .header { flex-direction: column; align-items: stretch; gap: 12px; padding: 14px; }
+            .brand { justify-content: flex-start; }
+            .actions { width: 100%; }
+            .btn { width: 100%; padding: 12px 16px; }
+            .content { padding: 12px; }
+            .note { font-size: .9rem; }
+        }
+
+        /* Ultra small screens */
+        @media (max-width: 380px) {
+            .brand span { font-size: .95rem; }
+            .btn { font-size: .95rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="brand">
+                    <a href="../index.html">← Home</a>
+                    <img src="../site-logo.png" alt="Kids Who Code">
+                    <span><strong>Brochure</strong></span>
+                </div>
+                <div class="actions">
+                    <a class="btn" href="1.png" download>Download Page 1</a>
+                    <a class="btn" href="2.png" download>Download Page 2</a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="pages">
+                    <div class="page"><a href="1.png" target="_blank" rel="noopener"><img src="1.png" alt="Brochure page 1" loading="lazy"></a></div>
+                    <div class="page"><a href="2.png" target="_blank" rel="noopener"><img src="2.png" alt="Brochure page 2" loading="lazy"></a></div>
+                </div>
+                <p class="note">Tip: Tap an image to open it full-size. Use the download buttons for offline sharing.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
